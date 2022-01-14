@@ -19,7 +19,7 @@ document.getElementById('transaction-form').addEventListener("submit", function(
   const date = document.getElementById('date-input').value;
   const type = document.querySelector('input[name="type-input"]:checked').value;
 
-   data.transaction.unshift({
+   data.transactions.unshift({
      value: value, 
      description: description, 
      date: date,
@@ -65,7 +65,7 @@ function logout() {
 }
 
 function getTransactions() {
-  const transactions = data.transaction;
+  const transactions = data.transactions;
   let transactionsHtml = ``;
 
   if(transactions.length) {

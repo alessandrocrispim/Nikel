@@ -20,7 +20,7 @@ document.getElementById('transaction-form').addEventListener("submit", function(
   const date = document.getElementById('date-input').value;
   const type = document.querySelector('input[name="type-input"]:checked').value;
 
-   data.transaction.unshift({
+   data.transactions.unshift({
      value: value, 
      description: description, 
      date: date,
@@ -72,7 +72,7 @@ function logout() {
 }
 
 function getCashIn() {
-  const transactions = data.transaction;
+  const transactions = data.transactions;
   const cashIn = transactions.filter((item) => item.type === "1");
 
   if(cashIn.length) {
@@ -111,7 +111,7 @@ function getCashIn() {
 }
 
 function getCashOut() {
-  const transactions = data.transaction;
+  const transactions = data.transactions;
   const cashIn = transactions.filter((item) => item.type === "2");
 
   if(cashIn.length) {
@@ -150,7 +150,7 @@ function getCashOut() {
 }
 
 function getTotal() {
-  const transactions = data.transaction;
+  const transactions = data.transactions;
   let total = 0;
   transactions.forEach((item) => {
     if(item.type === '1') {
